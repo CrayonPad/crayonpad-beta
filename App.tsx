@@ -326,7 +326,7 @@ const Modules: React.FC = () => {
       </FadeInSection>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {[
-          { title: "Clerical Latency Patch", tag: "Module A", desc: "90% reduction in daily administrative input. Generate DLLs and DLPs mapped to DepEd competencies in under 60 seconds.", icon: <Zap className="w-8 h-8" /> },
+          { title: "The Paperwork Patch", tag: "Module A", desc: "90% reduction in daily administrative input. Generate DLLs and DLPs mapped to DepEd competencies in under 60 seconds.", icon: <Zap className="w-8 h-8" /> },
           { title: "Evaluative Precision", tag: "Module B", desc: "Automated logic for grading and TOS. Professional-grade rubrics generated based on performance task parameters in under 30 seconds.", icon: <Target className="w-8 h-8" /> },
           { title: "The Unified Build", tag: "Module C", desc: "All 14 secret modules—from Narrative Reports to Activity Sheets—synced in one high-speed, secure dashboard.", icon: <Layout className="w-8 h-8" /> }
         ].map((module, i) => (
