@@ -419,7 +419,10 @@ const Signup: React.FC = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
+// --- Start of Patch ---
+  const inputClasses = (fieldName: string) => 
+    `w-full h-12 md:h-14 bg-white border ${errors[fieldName] ? 'border-alertRed' : 'border-mutedGrey'} px-4 text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-widest focus:outline-none focus:border-actionBlue focus:ring-4 focus:ring-actionBlue/10 transition-all duration-300 placeholder:opacity-50`;
+  // --- End of Patch ---
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
