@@ -476,8 +476,13 @@ if (submitted) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         <FadeInSection className="space-y-8 md:space-y-10">
           <header className="space-y-4 md:space-y-6">
-            <h3 className="font-serif text-4xl md:text-8xl font-bold leading-tight text-charcoal uppercase text-balance">Recruiting the Founding 10.</h3>
-            <p className="font-sans text-xl md:text-2xl italic text-mutedInk leading-relaxed">Let's make teaching FUN again.</p>
+            <h3 className="font-serif text-3xl md:text-6xl font-bold leading-tight text-charcoal uppercase text-balance">
+              What every teacher needs today: A way to get the paperwork off your desk.
+            </h3>
+            <p className="font-sans text-lg md:text-xl italic text-mutedInk leading-relaxed max-w-2xl">
+              Veteran or rookie, school forms shouldn't take your Sundays. 
+              Take your time back and let’s make teaching FUN again.
+            </p>
           </header>
           <div className="space-y-6 border-l-4 border-actionBlue pl-6 md:pl-8 font-mono">
             <div className="flex items-center gap-4"><ChevronRight className="w-4 h-4 text-actionBlue" /><span className="text-xs md:text-sm font-bold uppercase tracking-widest">PRC Verification Required</span></div>
@@ -497,7 +502,7 @@ if (submitted) {
                 <div className="space-y-1"><input type="text" placeholder="PRC LICENSE NUMBER" className={inputClasses('prcLicense')} onChange={(e) => setFormData({...formData, prcLicense: e.target.value})} />{errors.prcLicense && <p className="text-[9px] text-alertRed font-bold tracking-tighter">[{errors.prcLicense}]</p>}</div>
                 <div className="space-y-1"><input type="email" placeholder="PERSONAL / DEPED EMAIL" className={inputClasses('email')} onChange={(e) => setFormData({...formData, email: e.target.value})} />{errors.email && <p className="text-[9px] text-alertRed font-bold tracking-tighter">[{errors.email}]</p>}</div>
                 <div className="space-y-1"><input type="text" placeholder="SCHOOL ID / REGION" className={inputClasses('schoolId')} onChange={(e) => setFormData({...formData, schoolId: e.target.value})} />{errors.schoolId && <p className="text-[9px] text-alertRed font-bold tracking-tighter">[{errors.schoolId}]</p>}</div>
-                <div className="space-y-1"><textarea placeholder="BRIEF STATEMENT: WHY DO YOU NEED TO PATCH YOUR WORKFLOW?" rows={4} className={`w-full bg-white border ${errors.statement ? 'border-alertRed' : 'border-mutedGrey'} p-4 text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-widest leading-loose focus:outline-none focus:border-actionBlue focus:ring-4 focus:ring-actionBlue/10 transition-all duration-300 placeholder:opacity-50 resize-none`} onChange={(e) => setFormData({...formData, statement: e.target.value})}></textarea>{errors.statement && <p className="text-[9px] text-alertRed font-bold tracking-tighter">[{errors.statement}]</p>}</div>
+                <div className="space-y-1"><textarea placeholder="TELL US: Which part of your paperwork do you want to automate first?" rows={4} className={`w-full bg-white border ${errors.statement ? 'border-alertRed' : 'border-mutedGrey'} p-4 text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-widest leading-loose focus:outline-none focus:border-actionBlue focus:ring-4 focus:ring-actionBlue/10 transition-all duration-300 placeholder:opacity-50 resize-none`} onChange={(e) => setFormData({...formData, statement: e.target.value})}></textarea>{errors.statement && <p className="text-[9px] text-alertRed font-bold tracking-tighter">[{errors.statement}]</p>}</div>
               </div>
               <button type="submit" className="w-full bg-actionBlue text-paper py-4 md:py-5 text-xs md:text-sm font-bold uppercase tracking-[0.4em] hover:bg-actionBlue hover:brightness-110 hover:scale-[1.02] transition-all duration-300 active:scale-[0.98] shadow-md hover:shadow-xl active:shadow-none">Submit Credential</button>
             </form>
