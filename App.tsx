@@ -260,7 +260,7 @@ const Editorial: React.FC<{ onShare: () => void }> = ({ onShare }) => {
         <div className="lg:col-span-8">
           <div className="mb-10 md:mb-12">
             <h3 className="font-serif text-3xl md:text-6xl font-bold leading-tight mb-6 text-charcoal">
-              A Manifesto for the Licensed Professional.
+              What every teacher needs today: A way to get the paperwork off your desk.
             </h3>
             <div className="font-mono flex flex-wrap items-center gap-3 md:gap-4 text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-mutedInk border-y border-mutedGrey py-3">
               <div className="flex items-center gap-2">
@@ -477,12 +477,8 @@ if (submitted) {
         <FadeInSection className="space-y-8 md:space-y-10">
           <header className="space-y-4 md:space-y-6">
             <h3 className="font-serif text-3xl md:text-6xl font-bold leading-tight text-charcoal uppercase text-balance">
-              What every teacher needs today: A way to get the paperwork off your desk.
-            </h3>
-            <p className="font-sans text-lg md:text-xl italic text-mutedInk leading-relaxed max-w-2xl">
-              Veteran or rookie, school forms shouldn't take your Sundays. 
-              Take your time back and let’s make teaching FUN again.
-            </p>
+              Recruiting the Founding 10
+          
           </header>
           <div className="space-y-6 border-l-4 border-actionBlue pl-6 md:pl-8 font-mono">
             <div className="flex items-center gap-4"><ChevronRight className="w-4 h-4 text-actionBlue" /><span className="text-xs md:text-sm font-bold uppercase tracking-widest">PRC Verification Required</span></div>
