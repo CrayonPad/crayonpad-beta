@@ -475,15 +475,15 @@ if (submitted) {
     <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         <FadeInSection className="space-y-8 md:space-y-10">
-          <header className="space-y-4 md:space-y-6">
+         <header className="space-y-4 md:space-y-6">
             <h3 className="font-serif text-3xl md:text-6xl font-bold leading-tight text-charcoal uppercase text-balance">
-              Recruiting the Founding 10
-          
+              What every teacher needs today: A way to get the paperwork off your desk.
+            </h3>
+            <p className="font-sans text-lg md:text-xl italic text-mutedInk leading-relaxed max-w-2xl">
+              Veteran or rookie, school forms shouldn't take your Sundays. 
+              Take your time back and let’s make teaching FUN again.
+            </p>
           </header>
-          <div className="space-y-6 border-l-4 border-actionBlue pl-6 md:pl-8 font-mono">
-            <div className="flex items-center gap-4"><ChevronRight className="w-4 h-4 text-actionBlue" /><span className="text-xs md:text-sm font-bold uppercase tracking-widest">PRC Verification Required</span></div>
-            <div className="flex items-center gap-4"><ChevronRight className="w-4 h-4 text-actionBlue" /><span className="text-xs md:text-sm font-bold uppercase tracking-widest">Lifetime Strategist Status</span></div>
-          </div>
         </FadeInSection>
         <FadeInSection>
           <div className="newspaper-border p-6 md:p-12 bg-white shadow-[12px_12px_0px_#1D4ED8] md:shadow-[16px_16px_0px_#1D4ED8] shadow-opacity-20">
