@@ -360,7 +360,7 @@ const CommunityCTA: React.FC<{ onShare: () => void }> = ({ onShare }) => {
     const shareData = {
       title: 'CrayonPad - Reclaim Your Teaching License',
       text: 'The teaching "Meta" is broken. It’s time to patch it. 🛠️ Join the CrayonPad movement to stop the clerical grind for Filipino educators.',
-      url: 'https://crayonpad.ph',
+      url: 'https://crayonpad-beta.vercel.app',
     };
 
     try {
