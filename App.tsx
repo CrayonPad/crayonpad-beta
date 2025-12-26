@@ -155,7 +155,7 @@ const Hero: React.FC = () => {
 
 const ShareModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
   const [copiedType, setCopiedType] = useState<'meta' | 'emotional' | 'link' | null>(null);
-  const shareUrl = "https://crayonpad.ph";
+  const shareUrl = "https://crayonpad-beta.vercel.app/";
 
   const templates = {
     meta: {
