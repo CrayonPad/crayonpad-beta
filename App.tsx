@@ -420,26 +420,33 @@ const Signup: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) { setSubmitted(true); }
+    
+    // 1. Run your validation first
+    if (validate()) {
+      try {
+        // 2. Transmit data to Formspree
+        const response = await fetch("https://formspree.io/f/xpqzwvoq", {
+          method: "POST",
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData),
+        });
+
+        // 3. If transmission is successful, show the "Transmission Received" screen
+        if (response.ok) {
+          setSubmitted(true);
+        } else {
+          alert("System Error: Transmission failed. Please try again.");
+        }
+      } catch (error) {
+        alert("Network Error: Check your connection.");
+      }
+    }
   };
-
-  const inputClasses = (fieldName: string) => `w-full h-12 md:h-14 bg-white border ${errors[fieldName] ? 'border-alertRed' : 'border-mutedGrey'} px-4 text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-widest focus:outline-none focus:border-actionBlue focus:ring-4 focus:ring-actionBlue/10 transition-all duration-300 placeholder:opacity-50`;
-
-  if (submitted) {
-    return (
-      <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto text-center">
-        <FadeInSection>
-          <div className="newspaper-border p-12 bg-white inline-block max-w-xl shadow-[16px_16px_0px_#1D4ED8] shadow-opacity-20">
-            <Stamp className="w-16 h-16 mx-auto mb-6 text-actionBlue" />
-            <h3 className="font-serif text-4xl font-bold text-charcoal uppercase mb-4">Transmission Received</h3>
-            <p className="font-mono text-xs font-bold uppercase tracking-widest text-mutedInk leading-relaxed">Your credentials have been logged for review. The Founding 10 selection is underway. Stand by for encrypted update.</p>
-          </div>
-        </FadeInSection>
-      </section>
-    );
-  }
 
   return (
     <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto">
