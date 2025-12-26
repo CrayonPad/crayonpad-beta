@@ -451,7 +451,26 @@ const Signup: React.FC = () => {
       }
     }
   };
-
+if (submitted) {
+    return (
+      <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto text-center">
+        <div className="newspaper-border p-8 md:p-12 bg-white inline-block max-w-xl shadow-[12px_12px_0px_#1D4ED8]">
+          <h3 className="font-serif text-3xl font-bold text-charcoal uppercase mb-6 text-alertRed">Submission Received</h3>
+          <p className="font-sans text-sm font-bold text-mutedInk leading-relaxed mb-8">
+            Thanks for participating! Your credentials have been logged. 
+            You will receive an email transmission if you are selected for the upcoming Beta.
+          </p>
+          <div className="border-t border-mutedGrey pt-6">
+            <p className="font-mono text-[10px] tracking-widest uppercase mb-4">Follow for updates:</p>
+            <div className="flex justify-center gap-6">
+              <span className="font-bold text-actionBlue text-xs cursor-pointer uppercase">Facebook</span>
+              <span className="font-bold text-actionBlue text-xs cursor-pointer uppercase">TikTok</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
     <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
