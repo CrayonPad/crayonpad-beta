@@ -262,7 +262,7 @@ const Editorial: React.FC<{ onShare: () => void }> = ({ onShare }) => {
             <h3 className="font-serif text-3xl md:text-5xl font-bold leading-tight mb-6 text-charcoal">
           What every teacher needs today: A way to get the paperwork off your desk.
         </h3>
-        <p className="font-sans text-lg md:text-xl italic text-mutedInk leading-relaxed max-w-2xl mb-8 text-left">
+        <p className="font-sans text-lg md:text-xl italic text-mutedInk leading-relaxed max-w-2xl mb-8">
           Veteran or rookie, school forms shouldn't take your Sundays. 
           Take your time back and let’s make teaching FUN again.
         </p>
@@ -479,14 +479,10 @@ if (submitted) {
     <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         <FadeInSection className="space-y-8 md:space-y-10">
-         <header className="space-y-4 md:space-y-6">
-            <h3 className="font-serif text-2xl md:text-4xl font-bold leading-tight text-charcoal text-balance">
-              What every teacher needs today: A way to get the paperwork off your desk.
+         <header className="mb-8">
+            <h3 className="font-serif text-3xl md:text-5xl font-bold leading-tight text-charcoal uppercase text-balance">
+              Recruiting the Founding 10.
             </h3>
-            <p className="font-sans text-base md:text-lg italic text-mutedInk leading-relaxed max-w-2xl">
-              Veteran or rookie, school forms shouldn't take your Sundays. 
-              Take your time back and let’s make teaching FUN again.
-            </p>
           </header>
         </FadeInSection>
         <FadeInSection>
