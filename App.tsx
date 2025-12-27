@@ -451,7 +451,6 @@ const Signup: React.FC = () => {
     }
   };
 
-  // State: When the user successfully signs up
   if (submitted) {
     return (
       <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto text-center">
@@ -473,12 +472,12 @@ const Signup: React.FC = () => {
     );
   }
 
-  // State: The actual form (Form is on the RIGHT on desktop)
   return (
     <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto">
+      {/* This Grid handles the "Text Left / Form Right" layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         
-        {/* LEFT COLUMN: Text Content */}
+        {/* LEFT COLUMN */}
         <FadeInSection className="space-y-8 md:space-y-10">
           <header className="mb-8">
             <h3 className="font-serif text-3xl md:text-5xl font-bold leading-tight text-charcoal uppercase text-balance">
@@ -502,7 +501,7 @@ const Signup: React.FC = () => {
           </div>
         </FadeInSection>
 
-        {/* RIGHT COLUMN: The Intake Form Card */}
+        {/* RIGHT COLUMN */}
         <FadeInSection>
           <div className="newspaper-border p-6 md:p-12 bg-white shadow-[12px_12px_0px_#1D4ED8] md:shadow-[16px_16px_0px_#1D4ED8]">
             <div className="text-center mb-8 md:mb-10 border-b-2 border-charcoal pb-6 md:pb-8">
@@ -535,3 +534,27 @@ const Signup: React.FC = () => {
     </section>
   );
 };
+
+/**
+ * THE MAIN APP COMPONENT
+ * This is the part that actually builds the page using all your sections above.
+ */
+const App: React.FC = () => {
+  const [isShareOpen, setIsShareOpen] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-paper text-charcoal selection:bg-actionBlue selection:text-white">
+      <Header />
+      <main>
+        <Hero />
+        <Editorial onShare={() => setIsShareOpen(true)} />
+        <Modules />
+        <CommunityCTA onShare={() => setIsShareOpen(true)} />
+        <Signup />
+      </main>
+      <ShareModal isOpen={isShareOpen} onClose={() => setIsShareOpen(false)} />
+    </div>
+  );
+};
+
+export default App;
