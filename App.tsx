@@ -417,34 +417,29 @@ const Signup: React.FC = () => {
     const newErrors: Record<string, string> = {};
     if (!formData.fullName.trim()) newErrors.fullName = 'REQUIRED';
     if (!formData.prcLicense.trim()) newErrors.prcLicense = 'REQUIRED';
-    if (!formData.email.trim()) { newErrors.email = 'REQUIRED'; } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) { newErrors.email = 'INVALID FORMAT'; }
+    if (!formData.email.trim()) { 
+      newErrors.email = 'REQUIRED'; 
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) { 
+      newErrors.email = 'INVALID FORMAT'; 
+    }
     if (!formData.schoolId.trim()) newErrors.schoolId = 'REQUIRED';
     if (!formData.statement.trim()) newErrors.statement = 'REQUIRED';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-// --- Start of Patch ---
+
   const inputClasses = (fieldName: string) => 
     `w-full h-12 md:h-14 bg-white border ${errors[fieldName] ? 'border-alertRed' : 'border-mutedGrey'} px-4 text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-widest focus:outline-none focus:border-actionBlue focus:ring-4 focus:ring-actionBlue/10 transition-all duration-300 placeholder:opacity-50`;
-  // --- End of Patch ---
-  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // 1. Run your validation first
     if (validate()) {
       try {
-        // 2. Transmit data to Formspree
         const response = await fetch("https://formspree.io/f/xpqzwvoq", {
           method: "POST",
-          headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-          },
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         });
-
-        // 3. If transmission is successful, show the "Transmission Received" screen
         if (response.ok) {
           setSubmitted(true);
         } else {
@@ -455,7 +450,9 @@ const Signup: React.FC = () => {
       }
     }
   };
-if (submitted) {
+
+  // State: When the user successfully signs up
+  if (submitted) {
     return (
       <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto text-center">
         <div className="newspaper-border p-8 md:p-12 bg-white inline-block max-w-xl shadow-[12px_12px_0px_#1D4ED8]">
@@ -473,10 +470,15 @@ if (submitted) {
           </div>
         </div>
       </section>
-   <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto">
+    );
+  }
+
+  // State: The actual form (Form is on the RIGHT on desktop)
+  return (
+    <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         
-        {/* LEFT COLUMN: Headline and 5 Status Items */}
+        {/* LEFT COLUMN: Text Content */}
         <FadeInSection className="space-y-8 md:space-y-10">
           <header className="mb-8">
             <h3 className="font-serif text-3xl md:text-5xl font-bold leading-tight text-charcoal uppercase text-balance">
@@ -485,32 +487,24 @@ if (submitted) {
           </header>
 
           <div className="space-y-6 border-l-4 border-actionBlue pl-6 md:pl-8 font-mono">
-            <div className="flex items-center gap-4">
-              <ChevronRight className="w-4 h-4 text-actionBlue" />
-              <span className="text-xs md:text-sm font-bold uppercase tracking-widest">PRC Verification Required</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <ChevronRight className="w-4 h-4 text-actionBlue" />
-              <span className="text-xs md:text-sm font-bold uppercase tracking-widest">Lifetime Strategist Status</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <ChevronRight className="w-4 h-4 text-actionBlue" />
-              <span className="text-xs md:text-sm font-bold uppercase tracking-widest">Priority Feature Request Access</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <ChevronRight className="w-4 h-4 text-actionBlue" />
-              <span className="text-xs md:text-sm font-bold uppercase tracking-widest">Early Adopter Badge Authenticated</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <ChevronRight className="w-4 h-4 text-actionBlue" />
-              <span className="text-xs md:text-sm font-bold uppercase tracking-widest">Zero-Latency Paperwork Patch</span>
-            </div>
+            {[
+              "PRC Verification Required",
+              "Lifetime Strategist Status",
+              "Priority Feature Request Access",
+              "Early Adopter Badge Authenticated",
+              "Zero-Latency Paperwork Patch"
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-4">
+                <ChevronRight className="w-4 h-4 text-actionBlue" />
+                <span className="text-xs md:text-sm font-bold uppercase tracking-widest">{item}</span>
+              </div>
+            ))}
           </div>
         </FadeInSection>
 
         {/* RIGHT COLUMN: The Intake Form Card */}
         <FadeInSection>
-          <div className="newspaper-border p-6 md:p-12 bg-white shadow-[12px_12px_0px_#1D4ED8] md:shadow-[16px_16px_0px_#1D4ED8] shadow-opacity-20">
+          <div className="newspaper-border p-6 md:p-12 bg-white shadow-[12px_12px_0px_#1D4ED8] md:shadow-[16px_16px_0px_#1D4ED8]">
             <div className="text-center mb-8 md:mb-10 border-b-2 border-charcoal pb-6 md:pb-8">
               <Stamp className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-charcoal opacity-40" />
               <h4 className="font-serif text-2xl md:text-3xl font-bold text-charcoal uppercase">Intake Form v0.1</h4>
@@ -519,11 +513,16 @@ if (submitted) {
 
             <form className="font-mono bg-paper border border-dashed border-mutedGrey p-4 md:p-8 space-y-4 md:space-y-6" onSubmit={handleSubmit} noValidate>
               <div className="space-y-6">
-                <div className="space-y-1"><input type="text" placeholder="FULL NAME (PER LICENSE)" className={inputClasses('fullName')} onChange={(e) => setFormData({...formData, fullName: e.target.value})} /></div>
-                <div className="space-y-1"><input type="text" placeholder="PRC LICENSE NUMBER" className={inputClasses('prcLicense')} onChange={(e) => setFormData({...formData, prcLicense: e.target.value})} /></div>
-                <div className="space-y-1"><input type="email" placeholder="PERSONAL / DEPED EMAIL" className={inputClasses('email')} onChange={(e) => setFormData({...formData, email: e.target.value})} /></div>
-                <div className="space-y-1"><input type="text" placeholder="SCHOOL ID / REGION" className={inputClasses('schoolId')} onChange={(e) => setFormData({...formData, schoolId: e.target.value})} /></div>
-                <div className="space-y-1"><textarea placeholder="TELL US: Which part of your paperwork do you want to automate first?" rows={4} className={`w-full bg-white border ${errors.statement ? 'border-alertRed' : 'border-mutedGrey'} p-3 text-sm focus:outline-none focus:border-actionBlue transition-colors`} onChange={(e) => setFormData({...formData, statement: e.target.value})} /></div>
+                <input type="text" placeholder="FULL NAME (PER LICENSE)" className={inputClasses('fullName')} onChange={(e) => setFormData({...formData, fullName: e.target.value})} />
+                <input type="text" placeholder="PRC LICENSE NUMBER" className={inputClasses('prcLicense')} onChange={(e) => setFormData({...formData, prcLicense: e.target.value})} />
+                <input type="email" placeholder="PERSONAL / DEPED EMAIL" className={inputClasses('email')} onChange={(e) => setFormData({...formData, email: e.target.value})} />
+                <input type="text" placeholder="SCHOOL ID / REGION" className={inputClasses('schoolId')} onChange={(e) => setFormData({...formData, schoolId: e.target.value})} />
+                <textarea 
+                  placeholder="TELL US: Which part of your paperwork do you want to automate first?" 
+                  rows={4} 
+                  className={`w-full bg-white border ${errors.statement ? 'border-alertRed' : 'border-mutedGrey'} p-3 text-sm focus:outline-none focus:border-actionBlue transition-colors`} 
+                  onChange={(e) => setFormData({...formData, statement: e.target.value})} 
+                />
               </div>
               <button type="submit" className="w-full bg-actionBlue text-paper py-4 md:py-5 text-xs md:text-sm font-bold uppercase tracking-[0.4em] hover:bg-actionBlue hover:brightness-110 hover:scale-[1.02] transition-all">
                 SUBMIT INTAKE REQUEST
@@ -531,9 +530,8 @@ if (submitted) {
             </form>
           </div>
         </FadeInSection>
+
       </div>
     </section>
   );
 };
-
-export default App;
