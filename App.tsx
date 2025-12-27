@@ -484,8 +484,28 @@ if (submitted) {
               Recruiting the Founding 10.
             </h3>
           </header>
-        </FadeInSection>
-        <FadeInSection>
+        <div className="space-y-6 border-l-4 border-actionBlue pl-6 md:pl-8 font-mono mb-12">
+            <div className="flex items-center gap-4">
+              <ChevronRight className="w-4 h-4 text-actionBlue" />
+              <span className="text-xs md:text-sm font-bold uppercase tracking-widest">PRC Verification Required</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <ChevronRight className="w-4 h-4 text-actionBlue" />
+              <span className="text-xs md:text-sm font-bold uppercase tracking-widest">Lifetime Strategist Status</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <ChevronRight className="w-4 h-4 text-actionBlue" />
+              <span className="text-xs md:text-sm font-bold uppercase tracking-widest">Priority Feature Request Access</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <ChevronRight className="w-4 h-4 text-actionBlue" />
+              <span className="text-xs md:text-sm font-bold uppercase tracking-widest">Early Adopter Badge Authenticated</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <ChevronRight className="w-4 h-4 text-actionBlue" />
+              <span className="text-xs md:text-sm font-bold uppercase tracking-widest">Zero-Latency Paperwork Patch</span>
+            </div>
+          </div>
           <div className="newspaper-border p-6 md:p-12 bg-white shadow-[12px_12px_0px_#1D4ED8] md:shadow-[16px_16px_0px_#1D4ED8] shadow-opacity-20">
             <div className="text-center mb-8 md:mb-10 border-b-2 border-charcoal pb-6 md:pb-8">
               <Stamp className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-charcoal opacity-40" />
