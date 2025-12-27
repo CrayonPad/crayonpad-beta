@@ -473,13 +473,10 @@ if (submitted) {
           </div>
         </div>
       </section>
-    );
-  }
-  return (
-  <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto">
+   <section id="founding-10" className="px-4 py-20 md:py-32 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         
-        {/* LEFT COLUMN: Header and Status List */}
+        {/* LEFT COLUMN: Headline and 5 Status Items */}
         <FadeInSection className="space-y-8 md:space-y-10">
           <header className="mb-8">
             <h3 className="font-serif text-3xl md:text-5xl font-bold leading-tight text-charcoal uppercase text-balance">
@@ -511,7 +508,7 @@ if (submitted) {
           </div>
         </FadeInSection>
 
-        {/* RIGHT COLUMN: Intake Form */}
+        {/* RIGHT COLUMN: The Intake Form Card */}
         <FadeInSection>
           <div className="newspaper-border p-6 md:p-12 bg-white shadow-[12px_12px_0px_#1D4ED8] md:shadow-[16px_16px_0px_#1D4ED8] shadow-opacity-20">
             <div className="text-center mb-8 md:mb-10 border-b-2 border-charcoal pb-6 md:pb-8">
@@ -536,57 +533,6 @@ if (submitted) {
         </FadeInSection>
       </div>
     </section>
-              <h4 className="font-serif text-2xl md:text-3xl font-bold text-charcoal uppercase">Intake Form v0.1</h4>
-              <div className="font-mono inline-block px-3 py-1 bg-alertRed text-paper text-[10px] font-bold uppercase tracking-widest rounded-sm mt-4">CLOSED BETA</div>
-            </div>
-            <form className="font-mono bg-paper border border-dashed border-mutedGrey p-4 md:p-8 space-y-4 md:space-y-6" onSubmit={handleSubmit} noValidate>
-              <div className="space-y-6">
-                <div className="space-y-1"><input type="text" placeholder="FULL NAME (PER LICENSE)" className={inputClasses('fullName')} onChange={(e) => setFormData({...formData, fullName: e.target.value})} />{errors.fullName && <p className="text-[9px] text-alertRed font-bold tracking-tighter">[{errors.fullName}]</p>}</div>
-                <div className="space-y-1"><input type="text" placeholder="PRC LICENSE NUMBER" className={inputClasses('prcLicense')} onChange={(e) => setFormData({...formData, prcLicense: e.target.value})} />{errors.prcLicense && <p className="text-[9px] text-alertRed font-bold tracking-tighter">[{errors.prcLicense}]</p>}</div>
-                <div className="space-y-1"><input type="email" placeholder="PERSONAL / DEPED EMAIL" className={inputClasses('email')} onChange={(e) => setFormData({...formData, email: e.target.value})} />{errors.email && <p className="text-[9px] text-alertRed font-bold tracking-tighter">[{errors.email}]</p>}</div>
-                <div className="space-y-1"><input type="text" placeholder="SCHOOL ID / REGION" className={inputClasses('schoolId')} onChange={(e) => setFormData({...formData, schoolId: e.target.value})} />{errors.schoolId && <p className="text-[9px] text-alertRed font-bold tracking-tighter">[{errors.schoolId}]</p>}</div>
-                <div className="space-y-1"><textarea placeholder="TELL US: Which part of your paperwork do you want to automate first?" rows={4} className={`w-full bg-white border ${errors.statement ? 'border-alertRed' : 'border-mutedGrey'} p-4 text-[10px] md:text-xs font-bold text-charcoal uppercase tracking-widest leading-loose focus:outline-none focus:border-actionBlue focus:ring-4 focus:ring-actionBlue/10 transition-all duration-300 placeholder:opacity-50 resize-none`} onChange={(e) => setFormData({...formData, statement: e.target.value})}></textarea>{errors.statement && <p className="text-[9px] text-alertRed font-bold tracking-tighter">[{errors.statement}]</p>}</div>
-              </div>
-              <button type="submit" className="w-full bg-actionBlue text-paper py-4 md:py-5 text-xs md:text-sm font-bold uppercase tracking-[0.4em] hover:bg-actionBlue hover:brightness-110 hover:scale-[1.02] transition-all duration-300 active:scale-[0.98] shadow-md hover:shadow-xl active:shadow-none">Submit Credential</button>
-            </form>
-            <div className="mt-6 md:mt-8 space-y-2">
-              <p className="font-mono text-[8px] md:text-[9px] font-bold uppercase tracking-widest text-center text-actionBlue/80 px-4">Your credentials are encrypted and used only to verify professional status for Beta access.</p>
-              <p className="font-mono text-[8px] md:text-[9px] font-bold uppercase tracking-widest text-center opacity-40 px-4">* By submitting, you acknowledge that access is limited to 10 strategists for the initial build cycle.</p>
-            </div>
-          </div>
-        </FadeInSection>
-      </div>
-    </section>
-  );
-};
-
-const Footer: React.FC = () => {
-  return (
-    <FadeInSection>
-      <footer className="px-4 mt-20 md:mt-32 pt-12 pb-12 border-t border-mutedGrey flex flex-col md:flex-row justify-between items-center gap-8 font-mono text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em] text-mutedInk text-center md:text-left max-w-7xl mx-auto">
-        <div>© 2024 CrayonPad Technologies // Philippines</div>
-        <div className="flex flex-wrap justify-center gap-6 md:gap-8"><a href="#" className="hover:text-actionBlue transition-colors duration-300">Privacy Protocol</a><a href="#" className="hover:text-actionBlue transition-colors duration-300">Intel Terms</a></div>
-        <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-actionBlue" /> SECURE BUILD</div>
-      </footer>
-    </FadeInSection>
-  );
-};
-
-const App: React.FC = () => {
-  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
-  return (
-    <div className="min-h-screen selection:bg-actionBlue selection:text-white font-sans overflow-x-hidden">
-      <Header />
-      <main>
-        <Hero />
-        <Editorial onShare={() => setIsShareModalOpen(true)} />
-        <Modules />
-        <CommunityCTA onShare={() => setIsShareModalOpen(true)} />
-        <Signup />
-      </main>
-      <Footer />
-      <ShareModal isOpen={isShareModalOpen} onClose={() => setIsShareModalOpen(false)} />
-    </div>
   );
 };
 
